@@ -1,0 +1,59 @@
+@mixin buttonFont($size, $weight, $height, $case) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  text-transform: $case;
+}
+
+.guilt-free-button {
+  //font-family: $primary-font;
+  border-radius: 28px;
+  padding: 16px 33px;
+  letter-spacing: 0.005em;
+  border: 2px solid $quaternary-bg;
+  height: 55px;
+  //transition: all 0.5s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  //background: $white;
+
+  @include buttonFont(17px, 600, normal, initial);
+  &.guilt-free--transparent {
+    color: $quaternary-bg;
+    background-color: unset;
+    border: 1.5px solid $quaternary-bg;
+    &:hover {
+      color: $senary-bg;
+    }
+  }
+  &.guilt-free--green {
+      color: $quaternary-bg;
+      background-color: $cards-primary;
+      border: 1.5px solid $cards-primary;
+      &:hover {
+        color: white;
+      }
+      @include animateHover($quinary, black);
+    }
+    &.btn {
+      width: 100%;
+    }
+    &.btn-social {
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: 100%;
+    }
+    &.--btn-gry-outline {
+      border: 2px solid $cards-primary;
+    }
+    &.mb-right-white{
+      background-repeat: no-repeat;
+      //background-position: center right 15px;
+      //background-image: url("/images/home/arrow-right-short.svg");
+      //background-size: 25px;
+      //padding: 16px 85px 16px 33px;
+    }
+}

@@ -1,0 +1,49 @@
+@mixin DFlex($flex, $align-item, $justify-content, $direction) {
+  display: $flex;
+  align-items: $align-item;
+  justify-content: $justify-content;
+  flex-direction: $direction;
+  flex-wrap: wrap;
+}
+
+@mixin position($position, $top, $right, $bottom, $left, $z-index) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-index;
+}
+
+@mixin fontSpecs($size, $weight, $color, $height, $case) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  line-height: $height;
+  text-transform: $case;
+}
+
+@mixin borderRadius($borderRadius, $borderwidth, $borderColor) {
+  border-color: $borderColor;
+  border-radius: $borderRadius;
+  border-width: $borderwidth;
+  border-style: solid;
+}
+@mixin animateHover($color, $hover-color) {
+  &:before {
+    content: "";
+    display: inline-block;
+    background-color: $color;
+    width: 0;
+    height: 100%;
+    transition: 0.5s ease-out;
+    @include position(absolute, 0, 0, 0, 0, -1);
+  }
+  &:hover {
+    color: $quaternary-bg;
+    transition: 0.5s ease-out;
+    &:before {
+      width: 100%;
+    }
+  }
+}

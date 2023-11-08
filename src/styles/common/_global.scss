@@ -1,0 +1,24 @@
+html,
+body {
+  font-family: "Exo" !important;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+main{
+  margin-top: 100px;
+}
+.container {
+  @media ($xl) {
+    max-width: 1170px;
+  }
+  // @media ($xxl) {
+  //   max-width: 1350px;
+  // }
+  // @media ($xxxl) {
+  //   max-width: 1530px;
+  // }
+  // @media ($desktop-xxxl) {
+  //   max-width: 1710px;
+  // }
+}

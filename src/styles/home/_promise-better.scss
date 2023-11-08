@@ -1,0 +1,145 @@
+.guilt-promise-better{
+    background-color: $tertiary;
+    color: $quaternary-bg;
+    position: relative;
+    overflow: hidden;
+    padding-top: 160px;
+    @media ($mobile) {
+        padding-top: 60px;
+    }
+    &--header{
+        @include DFlex(flex, center, space-between, row);
+        @media ($mobile) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        img{
+            z-index: 2;
+            @media ($mobile) {
+                width: 116px;
+                height: 100%;
+                margin-bottom: -24px;
+            }
+        }
+        h2{
+            @include fontSpecs(140px, 600, $quaternary-bg, 225px, initial);
+            z-index: 2;
+            @media ($mobile) {
+                line-height: normal;
+                font-size: 40px;
+            }
+        }
+    }
+    &--header-background{
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        .right{
+            @include position(absolute, auto, -75px, auto, auto, 1);
+            @media ($mobile) {
+                top: 45px;
+                right: 0;
+                bottom: auto;
+            }
+        }
+        .left{
+            @include position(relative, auto, auto, auto, 0, 1);
+            @media ($mobile) {
+                display:none;
+            }
+        }
+        .right, .left{
+            @include fontSpecs(120px, 600, $quaternary-bg, 225px, initial);
+            color: #5C5C5C;
+            -webkit-text-fill-color: #ffffff00;
+            -webkit-text-stroke: 1px #5C5C5C;
+            z-index: 1;
+            @media ($mobile) {
+                font-size: 40px;
+                line-height: normal;
+            }
+        }
+    }
+    &--content-item-info{
+        max-width: 486px;
+        padding-right: 90px;
+        @media ($mobile) {
+            max-width: 100%;
+            padding-right: 0px;
+        }
+        .btn-promise-better{
+            border: 1.5px solid $cards-primary;
+            gap: 36px;
+            @include DFlex(flex, center, space-between, row);
+            @include animateHover($quinary, black);
+        }
+    }
+    &--content-item{
+        @include DFlex(flex, flex-start, space-between, row);
+        @media ($mobile) {
+            flex-direction: column-reverse;
+        }
+        &.second{
+            align-items: center;
+            .guilt-promise-better--content-item-image{
+                order: 1;
+                max-width: 560px;
+                margin-top: -120px;
+                @media ($mobile) {
+                    max-width: 100%;
+                    margin-top: 0px;
+                    display: none;
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .guilt-promise-better--content-item-info{
+                order: 2;
+                opacity: 0.42;
+                padding-top: 40px;
+                img{
+                    margin-bottom: 48px;
+                }
+            }
+        }
+    }
+    &--content-item-image{
+        width: calc(100% - 486px);
+        order: 2;
+        .right-food-mobile{
+            display: none;
+            @media ($mobile) {
+                display: block;
+            }
+        }
+        @media ($mobile) {
+            width: 100%;
+            .left-food{
+                width: 90%;
+                left: -24px;
+                position: relative;
+            }
+            .right-food-mobile{
+                width: 90%;
+                position: relative;
+                right: -48px;
+                bottom: 35px;
+            }
+        }
+        img{
+            width: 100%;
+            object-fit: cover;
+            @media ($mobile) {
+                height: 100%;
+            }
+        }
+    }
+    &--content-item-info{
+        p{
+            @include fontSpecs(20px, normal, $quaternary-bg, 35px, initial);
+        }
+    }
+}
